@@ -59,9 +59,13 @@ const Navbar = () => {
         <div className="flex flex-col justify-center h-full bg-gradient-to-r from-[#03256c] to-green-500 gap-[40px]">
           <ul className=" flex flex-col justify-center p-4 space-y-4  bg-[url('https://storyvord.com/img/camera-stand-img.png')] bg-center h-full ">
             <div className="flex flex-col  gap-10 mt-10">
-              <li className="text-md font-josefin text-[26px]">Portfolio</li>
+              <li className="text-md font-josefin text-[26px]">
+                <a href="https://storyvord.com/portfolio" target="_blank">
+                  Portfolio
+                </a>
+              </li>
               <li
-                className="text-md font-josefin flex flex-col text-[26px] "
+                className="text-md font-josefin flex flex-col text-[26px] cursor-pointer"
                 onClick={toggleDropdown}
               >
                 <span>
@@ -85,37 +89,37 @@ const Navbar = () => {
                 </span>
                 {isDropdownOpen && (
                   <ul className="left-0 flex flex-col  text-black rounded-md text-[20px] ">
-                    <li className="px-4 py-4 cursor-pointer text-black border-b-[1.5px] hover:border-b-[2px] border-white mx-4">
+                    <li className="px-4 py-4 cursor-pointer text-black border-b-[1px] hover:border-b-[2px] border-white mx-4">
                       <a href="">Are you Buyer?</a>
                     </li>
-                    <li className="px-4 py-2 cursor-pointer text-black border-b-[1.5px] hover:border-b-[2px] border-white mx-4">
+                    <li className="px-4 py-2 cursor-pointer text-black border-b-[1px] hover:border-b-[2px] border-white mx-4">
                       <a href=""> Are you Creator?</a>
                     </li>
                   </ul>
                 )}
               </li>
 
-              <li className=" flex space-x-4 mt-4">
+              <li className=" flex space-x-4 mt-4 gap-3">
                 <a
-                  href="https://www.facebook.com"
+                  href="https://www.facebook.com/storyvord"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaFacebook className="text-white w-6 h-6 hover:text-gray-300" />
+                  <FaFacebook className="text-white w-7 h-7 hover:text-gray-300" />
                 </a>
                 <a
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/company/88028939"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaLinkedin className="text-white w-6 h-6 hover:text-gray-300" />
+                  <FaLinkedin className="text-white w-7 h-7 hover:text-gray-300" />
                 </a>
                 <a
-                  href="https://www.twitter.com"
+                  href="https://twitter.com/storyvord"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaTwitter className="text-white w-6 h-6 hover:text-gray-300" />
+                  <FaTwitter className="text-white w-7 h-7 hover:text-gray-300" />
                 </a>
               </li>
             </div>

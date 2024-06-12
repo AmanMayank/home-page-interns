@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
+import Modal from "./Modal";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleSidebar = () => {
     console.log(isSidebarOpen);
@@ -12,6 +14,14 @@ const Navbar = () => {
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   return (
@@ -89,11 +99,17 @@ const Navbar = () => {
                 </span>
                 {isDropdownOpen && (
                   <ul className="left-0 flex flex-col  text-black rounded-md text-[20px] ">
-                    <li className="px-4 py-4 cursor-pointer text-black border-b-[1px] hover:border-b-[2px] border-white mx-4">
-                      <a href="">Are you Buyer?</a>
+                    <li
+                      onClick={openModal}
+                      className="px-4 py-4 cursor-pointer text-black border-b-[1px] hover:border-b-[2px] border-white mx-4"
+                    >
+                      Are you Buyer?
                     </li>
-                    <li className="px-4 py-2 cursor-pointer text-black border-b-[1px] hover:border-b-[2px] border-white mx-4">
-                      <a href=""> Are you Creator?</a>
+                    <li
+                      onClick={openModal}
+                      className="px-4 py-2 cursor-pointer text-black border-b-[1px] hover:border-b-[2px] border-white mx-4"
+                    >
+                      Are you Creator?
                     </li>
                   </ul>
                 )}
@@ -126,6 +142,8 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
+
+      <Modal isOpen={isModalOpen} onClose={closeModal} />
     </nav>
   );
 };
